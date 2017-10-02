@@ -25,15 +25,15 @@ class PostsController < ApplicationController
       flash[:success] = "The post was created!"
       redirect_to @post
     else
-      render ‘new’
+      render 'new'
     end
   end
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: “Update successful”
+      redirect_to @post, notice: "Update successful" # changed here
     else
-      render ‘edit’
+      render 'edit' # changed here
     end
   end
 
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to _path, notice: “Post destroyed”
+    redirect_to _path, notice: "Post destroyed"
   end
 
   private
